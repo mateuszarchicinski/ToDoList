@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col s8">
+      <app-to-do-list-issues [issuesData]="issuesData$ | async"
+                             (updateIssueData)="handleUpdateIssueData($event)"
+                             (removeIssueData)="handleRemoveIssueData($event)">
+      </app-to-do-list-issues>
+    </div>
+    <div class="col s4">
+      <app-to-do-list-form (addIssueData)="handleAddIssueData($event)">
+      </app-to-do-list-form>
+    </div>
+  </div>
+</div>

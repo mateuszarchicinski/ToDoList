@@ -1,0 +1,25 @@
+<form class="col s12"
+      [formGroup]="form"
+      (ngSubmit)="handleFormSubmit()"
+      autocomplete="off"
+      novalidate>
+  <div class="row">
+    <div class="input-field col s12">
+      <input formControlName="name"
+             placeholder="Issue name">
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea class="materialize-textarea"
+                formControlName="description"
+                placeholder="Issue description">
+      </textarea>
+    </div>
+  </div>
+  <button class="btn waves-effect waves-light form-submit-button"
+          type="submit">
+    Add issue
+    <i class="material-icons right">send</i>
+  </button>
+</form>
