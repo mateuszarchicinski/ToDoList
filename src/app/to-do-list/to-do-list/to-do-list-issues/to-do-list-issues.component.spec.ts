@@ -8,7 +8,7 @@ describe('ToDoListIssuesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ToDoListIssuesComponent]
+      declarations: [ToDoListIssuesComponent],
     });
   });
 

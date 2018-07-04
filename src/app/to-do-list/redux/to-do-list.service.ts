@@ -24,8 +24,8 @@ export class ToDoListService {
     this.store.dispatch({type: ToDoListActionTypes.UPDATE_ISSUE_DATA, issue});
   }
 
-  removeIssueData(issue: ToDoListIssue): void {
-    this.store.dispatch({type: ToDoListActionTypes.REMOVE_ISSUE_DATA, issue});
+  removeIssueData(index: number): void {
+    this.store.dispatch({type: ToDoListActionTypes.REMOVE_ISSUE_DATA, index});
   }
 
   selectIssuesData(): Observable<ToDoListIssue[]> {

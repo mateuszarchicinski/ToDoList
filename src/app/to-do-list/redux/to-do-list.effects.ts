@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Actions, Effect } from '@ngrx/effects';
-import { map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { map, switchMap, withLatestFrom } from 'rxjs/operators';
 
 import {
   ToDoListActionTypes,
@@ -33,16 +33,15 @@ export class ToDoListEffects {
     ToDoListActionTypes.REMOVE_ISSUE_DATA,
   ).pipe(
     withLatestFrom(this.toDoListService.selectIssuesData()),
-    map(([_, issues]) => issues.reduce((prev, curr) => ({
+    map(([_, issues]) => issues.reduce((prev, currIssue) => ({
       ...prev,
-      [curr.id]: {
-        name: curr.name,
-        date: curr.date,
-        description: curr.description,
-        isChecked: curr.isChecked,
-      }
+      [currIssue.id]: {
+        name: currIssue.name,
+        date: currIssue.date,
+        description: currIssue.description,
+        isChecked: currIssue.isChecked,
+      },
     }), {})),
-    tap(x => console.log(2, x)),
     switchMap(issuesToSave => this.toDoListDataService.updateIssuesData(issuesToSave).pipe(
       map(issues => ({type: ToDoListActionTypes.UPDATE_ISSUES_DATA, issues})),
     )),

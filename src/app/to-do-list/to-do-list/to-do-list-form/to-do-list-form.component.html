@@ -1,6 +1,4 @@
-<form class="col s12"
-      [formGroup]="form"
-      (ngSubmit)="handleFormSubmit()"
+<form [formGroup]="form"
       autocomplete="off"
       novalidate>
   <div class="row">
@@ -17,7 +15,8 @@
       </textarea>
     </div>
   </div>
-  <button class="btn waves-effect waves-light form-submit-button"
+  <button class="btn form-submit-button"
+          (click)="handleFormSubmit()"
           type="submit">
     Add issue
     <i class="material-icons right">send</i>

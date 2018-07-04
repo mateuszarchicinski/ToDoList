@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ToDoListIssue } from '../../redux/to-do-list.model';
@@ -6,7 +6,8 @@ import { ToDoListIssue } from '../../redux/to-do-list.model';
 @Component({
   selector: 'app-to-do-list-form',
   templateUrl: './to-do-list-form.component.html',
-  styleUrls: ['./to-do-list-form.component.css']
+  styleUrls: ['./to-do-list-form.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ToDoListFormComponent implements OnInit {
 

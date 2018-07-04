@@ -15,7 +15,13 @@ export function toDoListReducer(state: ToDoListState = initialState, action?: To
     case ToDoListActionTypes.UPDATE_ISSUES_DATA: {
       return {
         ...state,
-        issues: Object.keys(action.issues || {}).reduce((prev, currKey) => ([...prev, {id: currKey, ...action.issues[currKey]}]), []),
+        issues: Object.keys(action.issues || {})
+          .reduce((prev, currKey) => ([...prev, {id: currKey, ...action.issues[currKey]}]), [])
+          .sort((a, b) => {
+            const firstDateTime = new Date(a.date).getTime();
+            const secondDateTime = new Date(b.date).getTime();
+            return firstDateTime - secondDateTime;
+          }),
       };
     }
     case ToDoListActionTypes.ADD_ISSUE_DATA: {
@@ -36,8 +42,7 @@ export function toDoListReducer(state: ToDoListState = initialState, action?: To
     }
     case ToDoListActionTypes.REMOVE_ISSUE_DATA: {
       const newIssues = (state.issues || []).slice();
-      const index = newIssues.findIndex(i => i.id === action.issue.id);
-      newIssues.splice(index, 1);
+      newIssues.splice(action.index, 1);
       return {
         ...state,
         issues: newIssues,

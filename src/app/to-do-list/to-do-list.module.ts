@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppCommonModule } from '../common/app-common.module';
 import { ToDoListRoutingModule } from './routing/to-do-list-routing.module';
@@ -15,8 +13,6 @@ import { ToDoListIssuesComponent } from './to-do-list/to-do-list-issues/to-do-li
     ToDoListIssuesComponent,
   ],
   imports: [
-    CommonModule,
-    ReactiveFormsModule,
     AppCommonModule,
     ToDoListRoutingModule,
   ],

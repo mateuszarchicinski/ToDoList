@@ -11,7 +11,7 @@ export class ToDoListIssuesComponent {
 
   @Input() issuesData: ToDoListIssue[];
   @Output() updateIssueData: EventEmitter<ToDoListIssue> = new EventEmitter();
-  @Output() removeIssueData: EventEmitter<ToDoListIssue> = new EventEmitter();
+  @Output() removeIssueData: EventEmitter<number> = new EventEmitter();
 
   trackByFn(index: number, issue: ToDoListIssue): string {
     return issue.id;

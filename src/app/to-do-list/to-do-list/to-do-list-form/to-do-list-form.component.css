@@ -1,3 +1,10 @@
+:host {
+  border: 1px solid #e0e0e0;
+  display: block;
+  margin: .5rem 0 1rem 0;
+  padding: 2.4rem;
+}
+
 .form-submit-button {
   display: block;
   margin: 0 auto;

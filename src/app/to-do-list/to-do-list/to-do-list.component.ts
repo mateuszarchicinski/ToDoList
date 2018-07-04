@@ -27,8 +27,8 @@ export class ToDoListComponent {
     this.toDoListService.updateIssueData(issue);
   }
 
-  handleRemoveIssueData(issue: ToDoListIssue): void {
-    this.toDoListService.removeIssueData(issue);
+  handleRemoveIssueData(index: number): void {
+    this.toDoListService.removeIssueData(index);
   }
 
 }

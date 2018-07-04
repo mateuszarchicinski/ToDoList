@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ToDoListFormComponent } from './to-do-list-form.component';
 
@@ -8,7 +9,8 @@ describe('ToDoListFormComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ToDoListFormComponent]
+      imports: [ReactiveFormsModule],
+      declarations: [ToDoListFormComponent],
     });
   });
 

@@ -23,7 +23,7 @@ import { AppComponent } from './app.component';
       useValue: 'https://todolist-9b7d9.firebaseio.com/',
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }

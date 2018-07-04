@@ -12,7 +12,7 @@ export type ToDoListFetchIssuesDataAction = { type: ToDoListActionTypes.FETCH_IS
 export type ToDoListUpdateIssuesDataAction = { type: ToDoListActionTypes.UPDATE_ISSUES_DATA, issues: ToDoListIssuesData };
 export type ToDoListAddIssueDataAction = { type: ToDoListActionTypes.ADD_ISSUE_DATA, issue: ToDoListIssue };
 export type ToDoListUpdateIssueDataAction = { type: ToDoListActionTypes.UPDATE_ISSUE_DATA, issue: ToDoListIssue };
-export type ToDoListRemoveIssueDataAction = { type: ToDoListActionTypes.REMOVE_ISSUE_DATA, issue: ToDoListIssue };
+export type ToDoListRemoveIssueDataAction = { type: ToDoListActionTypes.REMOVE_ISSUE_DATA, index: number };
 
 export type ToDoListAction = null
   | ToDoListFetchIssuesDataAction
