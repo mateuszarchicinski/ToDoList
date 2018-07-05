@@ -1,4 +1,4 @@
-import { ToDoListIssue, ToDoListIssuesData } from './to-do-list.model';
+import { ToDoListIssue, ToDoListIssuesData } from '../data/to-do-list.model';
 
 export enum ToDoListActionTypes {
   FETCH_ISSUES_DATA = '[TODOLIST] fetch issues data action',

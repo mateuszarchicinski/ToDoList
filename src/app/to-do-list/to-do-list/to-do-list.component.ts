@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { Observable } from 'rxjs/internal/Observable';
 
+import { ToDoListIssue } from '../data/to-do-list.model';
 import { ToDoListService } from '../redux/to-do-list.service';
-import { ToDoListIssue } from '../redux/to-do-list.model';
 
 @Component({
   selector: 'app-to-do-list',
   templateUrl: './to-do-list.component.html',
-  styleUrls: ['./to-do-list.component.css']
+  styleUrls: ['./to-do-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ToDoListComponent {
 

@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'to-do-list',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'to-do-list',

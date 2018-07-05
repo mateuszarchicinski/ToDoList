@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 
-import { ToDoListState } from './to-do-list.model';
+import { ToDoListState } from '../data/to-do-list.model';
 import { ToDoListAction, ToDoListActionTypes } from './to-do-list.actions';
 
 export const initialState: ToDoListState = {
@@ -27,14 +27,17 @@ export function toDoListReducer(state: ToDoListState = initialState, action?: To
     case ToDoListActionTypes.ADD_ISSUE_DATA: {
       return {
         ...state,
-        issues: [...state.issues, {id: uuid(), ...action.issue}],
+        issues: [...(state.issues || []), {id: uuid(), ...action.issue}],
       };
     }
     case ToDoListActionTypes.UPDATE_ISSUE_DATA: {
       const newIssues = (state.issues || []).slice();
-      const index = newIssues.findIndex(i => i.id === action.issue.id);
-      const issue = newIssues[index];
-      newIssues[index] = {...issue, isChecked: !issue.isChecked};
+      const updatedIssue = action.issue;
+      const index = newIssues.findIndex(i => i.id === (updatedIssue && updatedIssue.id));
+      const oldIssue = newIssues[index];
+      if (oldIssue) {
+        newIssues[index] = {...oldIssue, ...updatedIssue};
+      }
       return {
         ...state,
         issues: newIssues,

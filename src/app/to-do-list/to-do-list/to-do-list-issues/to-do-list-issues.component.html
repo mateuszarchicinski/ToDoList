@@ -1,5 +1,7 @@
 <ul class="collection with-header">
-  <li class="collection-header"><h4>To Do List</h4></li>
+  <li class="collection-header">
+    <h4>To Do List</h4>
+  </li>
   <li class="collection-item row valign-wrapper"
       *ngFor="let issue of issuesData; trackBy: trackByFn; let index = index">
     <div class="col s7">
@@ -10,14 +12,15 @@
     <div class="col s3">
       <label>
         <input [checked]="issue.isChecked"
-               (change)="updateIssueData.emit(issue)"
+               (change)="updateIssueIsCheckedData(issue)"
                type="checkbox"/>
         <span>Mark as done</span>
       </label>
     </div>
     <div class="col s2">
       <button class="btn btn-floating"
-              (click)="removeIssueData.emit(index)">
+              (click)="removeIssueData.emit(index)"
+              type="button">
         <i class="material-icons">remove</i>
       </button>
     </div>

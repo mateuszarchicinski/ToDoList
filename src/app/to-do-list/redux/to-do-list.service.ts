@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { ToDoListIssue, ToDoListState } from './to-do-list.model';
+import { ToDoListIssue, ToDoListState } from '../data/to-do-list.model';
 import { ToDoListActionTypes } from './to-do-list.actions';
 
 @Injectable()

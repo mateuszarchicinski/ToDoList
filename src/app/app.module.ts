@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ApiUrlToken } from './api/api';
+import { API_URL } from './api/api';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppReduxModule } from './redux/app.redux';
 import { AppComponent } from './app.component';
@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
   ],
   providers: [
     {
-      provide: ApiUrlToken,
+      provide: API_URL,
       useValue: 'https://todolist-9b7d9.firebaseio.com/',
     },
   ],

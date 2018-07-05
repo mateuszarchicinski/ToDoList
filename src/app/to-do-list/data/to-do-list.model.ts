@@ -11,5 +11,5 @@ export interface ToDoListIssue {
 }
 
 export interface ToDoListIssuesData {
-  [key: string]: any;
+  [key: string]: Partial<ToDoListIssue>;
 }

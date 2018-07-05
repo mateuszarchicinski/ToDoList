@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Type } from '@angular/core';
 
 import { ActionReducerMap, StoreModule } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { ToDoListState } from '../to-do-list/redux/to-do-list.model';
+import { ToDoListState } from '../to-do-list/data/to-do-list.model';
 import { toDoListReducer } from '../to-do-list/redux/to-do-list.reducer';
 import { ToDoListService } from '../to-do-list/redux/to-do-list.service';
 import { ToDoListEffects } from '../to-do-list/redux/to-do-list.effects';
@@ -19,7 +19,7 @@ const reducers: ActionReducerMap<State> = {
   toDoList: toDoListReducer,
 };
 
-const effects = [
+const effects: Type<any>[] = [
   ToDoListEffects,
 ];
 

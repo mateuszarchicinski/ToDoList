@@ -15,8 +15,7 @@ import { ToDoListIssuesComponent } from './to-do-list/to-do-list-issues/to-do-li
   imports: [
     AppCommonModule,
     ToDoListRoutingModule,
-  ],
-  providers: []
+  ]
 })
 export class ToDoListModule {
 }

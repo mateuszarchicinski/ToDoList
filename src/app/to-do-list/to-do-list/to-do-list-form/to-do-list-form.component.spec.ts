@@ -23,4 +23,24 @@ describe('ToDoListFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit add issue data event with proper arguments', () => {
+    const spy = spyOn(component.addIssueData, 'emit');
+    const value = {name: 'An example name', description: 'An example description'};
+    component.form.patchValue(value);
+
+    component.handleFormSubmit();
+
+    expect(spy).toHaveBeenCalledWith(jasmine.objectContaining(value));
+  });
+
+  it('should not emit add issue data event', () => {
+    const spy = spyOn(component.addIssueData, 'emit');
+    const value = {name: null, description: 'An example description'};
+    component.form.patchValue(value);
+
+    component.handleFormSubmit();
+
+    expect(spy).not.toHaveBeenCalled();
+  });
 });

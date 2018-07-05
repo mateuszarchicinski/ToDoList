@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { ToDoListIssue } from '../../redux/to-do-list.model';
+import { ToDoListIssue } from '../../data/to-do-list.model';
 
 @Component({
   selector: 'app-to-do-list-form',

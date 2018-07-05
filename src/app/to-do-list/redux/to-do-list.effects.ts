@@ -33,15 +33,7 @@ export class ToDoListEffects {
     ToDoListActionTypes.REMOVE_ISSUE_DATA,
   ).pipe(
     withLatestFrom(this.toDoListService.selectIssuesData()),
-    map(([_, issues]) => issues.reduce((prev, currIssue) => ({
-      ...prev,
-      [currIssue.id]: {
-        name: currIssue.name,
-        date: currIssue.date,
-        description: currIssue.description,
-        isChecked: currIssue.isChecked,
-      },
-    }), {})),
+    map(([_, issues]) => issues.reduce((prev, currIssue) => ({...prev, [currIssue.id]: currIssue}), {})),
     switchMap(issuesToSave => this.toDoListDataService.updateIssuesData(issuesToSave).pipe(
       map(issues => ({type: ToDoListActionTypes.UPDATE_ISSUES_DATA, issues})),
     )),

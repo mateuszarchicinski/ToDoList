@@ -5,11 +5,11 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { cold } from 'jasmine-marbles';
 import Spy = jasmine.Spy;
 
-import { ToDoListIssue } from './to-do-list.model';
+import { ToDoListIssue } from '../data/to-do-list.model';
 import { ToDoListActionTypes } from './to-do-list.actions';
 import { toDoListReducer } from './to-do-list.reducer';
 import { ToDoListService } from './to-do-list.service';
-import { toDoListIssuesMock } from './to-do-list.model.mocks';
+import { toDoListIssuesMock } from '../data/to-do-list.model.mocks';
 
 describe('ToDoListService', () => {
   let store: Store<any>;
@@ -34,7 +34,7 @@ describe('ToDoListService', () => {
     expect(toDoListService.selectIssuesData()).toBeObservable(cold('a', {a: toDoListIssuesMock}));
   });
 
-  it('should dispatch fetch issues data action with proper arguments', () => {
+  it('should dispatch fetch issues data action', () => {
     toDoListService.fetchIssuesData();
 
     expect(storeDispatchSpy).toHaveBeenCalledWith({type: ToDoListActionTypes.FETCH_ISSUES_DATA});
